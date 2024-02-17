@@ -1,0 +1,362 @@
+int i;
+int i1;
+int i2;
+int i3;
+int i4;
+int i5;
+int i6;
+int bright=240;
+char var;
+String str2="g o d";
+char str1[]="g o d";
+
+int len=str2.length();
+
+void setup() {
+
+Serial.begin(1200);
+pinMode(2,INPUT);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+i1=digitalRead(2);
+i2=digitalRead(4);
+i3=digitalRead(7);
+i4=digitalRead(8);
+i5=digitalRead(12);
+i6=digitalRead(13);
+
+analogWrite(3,bright);
+analogWrite(5,bright);
+analogWrite(6,bright);
+analogWrite(9,bright);
+analogWrite(10,bright);
+analogWrite(11,bright);
+delay(1000);
+
+for (i=0;i<len;i++)
+{var=str1[i];
+  
+  Serial.print("var =");
+    //Serial.print(str[i]);
+ Serial.print(var);
+delay(300);
+
+switch (var) {
+case 'a':
+  {i1=0,i2=0,i3=1,i4=0,i5=1,i6=0;
+  break;}
+case 'b':
+  {i1=0,i2=0,i3=1,i4=0,i5=1,i6=1;
+  break;}
+case 'c':
+  {i1=0,i2=0,i3=1,i4=1,i5=0,i6=0;
+  break;}
+case 'd':
+  {i1=0,i2=0,i3=1,i4=1,i5=0,i6=1;
+  break;}
+case 'e':
+  {i1=0,i2=0,i3=1,i4=1,i5=1,i6=0;
+  break;}
+case 'f':
+  {i1=0,i2=0,i3=1,i4=1,i5=1,i6=1;
+  break;}
+case 'g':
+  {i1=0,i2=1,i3=0,i4=0,i5=0,i6=0;
+  break;}
+case 'h':
+  {i1=0,i2=1,i3=0,i4=0,i5=0,i6=1;
+  break;}
+case 'i':
+  {i1=0,i2=1,i3=0,i4=0,i5=1,i6=0;
+  break;}
+case 'j':
+  {i1=0,i2=1,i3=0,i4=0,i5=1,i6=1;
+  break;}
+case 'k':
+  {i1=0,i2=1,i3=0,i4=1,i5=0,i6=0;
+  break;}
+case 'l':
+ {i1=0,i2=1,i3=0,i4=1,i5=0,i6=1;
+ break;}
+case 'm':
+  {i1=0,i2=1,i3=0,i4=1,i5=1,i6=0;
+  break;}
+case 'n':
+  {i1=0,i2=1,i3=0,i4=1,i5=1,i6=1;
+  break;}
+case 'o':
+  {i1=0,i2=1,i3=1,i4=0,i5=0,i6=0;
+  break;}
+case 'p':
+  {i1=0,i2=1,i3=1,i4=0,i5=0,i6=1;
+  break;}
+case 'q':
+  {i1=0,i2=1,i3=1,i4=0,i5=1,i6=0;
+  break;}
+case 'r':
+  {i1=0,i2=1,i3=1,i4=0,i5=1,i6=1;
+  break;
+ }
+case 's':
+  {i1=0,i2=1,i3=1,i4=1,i5=0,i6=0;
+  break;}
+case 't':
+  {i1=0,i2=1,i3=1,i4=1,i5=0,i6=1;
+  break;}
+case 'u':
+  {i1=0,i2=1,i3=1,i4=1,i5=1,i6=0;
+  break;}
+case 'v':
+  {i1=0,i2=1,i3=1,i4=1,i5=1,i6=1;
+  break;}
+case 'w':
+  {i1=1,i2=0,i3=0,i4=0,i5=0,i6=0;
+  break;}
+case 'x':
+  {i1=1,i2=0,i3=0,i4=0,i5=0,i6=1;
+  break;}
+case 'y':
+  {i1=1,i2=0,i3=0,i4=0,i5=1,i6=0;
+  break;}
+case 'z':
+  {i1=1,i2=0,i3=0,i4=0,i5=1,i6=1;
+  break;}
+case ' ':
+  {i1=1,i2=1,i3=1,i4=1,i5=1,i6=1;
+  break;}
+}
+  delay(100);
+
+
+if(i1==0 && i2==0 && i3==1 && i4==0 && i5==1 && i6==0) //FOR A
+{analogWrite(3,bright);
+analogWrite(5,LOW);
+analogWrite(6,LOW);
+analogWrite(9,LOW);
+analogWrite(10,LOW);
+analogWrite(11,LOW);}
+
+else if(i1==0 && i2==0 && i3==1 && i4==0 && i5==1 && i6==1) //FOR B
+{analogWrite(3,bright);
+analogWrite(5,bright);
+analogWrite(6,LOW);
+analogWrite(9,LOW);
+analogWrite(10,LOW);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==0 && i3==1 && i4==1 && i5==0 && i6==0) //FOR C
+{analogWrite(3,bright);
+analogWrite(5,LOW);
+analogWrite(6,LOW);
+analogWrite(9,bright);
+analogWrite(10,LOW);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==0 && i3==1 && i4==1 && i5==0 && i6==1) //FOR D
+{analogWrite(3,bright);
+analogWrite(5,LOW);
+analogWrite(6,LOW);
+analogWrite(9,bright);
+analogWrite(10,bright);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==0 && i3==1 && i4==1 && i5==1 && i6==0) //FOR E
+{analogWrite(3,bright);
+analogWrite(5,LOW);
+analogWrite(6,LOW);
+analogWrite(9,LOW);
+analogWrite(10,bright);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==0 && i3==1 && i4==1 && i5==1 && i6==1) //FOR F
+{analogWrite(3,bright);
+analogWrite(5,bright);
+analogWrite(6,LOW);
+analogWrite(9,bright);
+analogWrite(10,LOW);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==1 && i3==0 && i4==0 && i5==0 && i6==0) //FOR G
+{analogWrite(3,bright);
+analogWrite(5,bright);
+analogWrite(6,LOW);
+analogWrite(9,bright);
+analogWrite(10,bright);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==1 && i3==0 && i4==0 && i5==0 && i6==1) //FOR H
+{ analogWrite(3,bright);
+analogWrite(5,bright);
+analogWrite(6,LOW);
+analogWrite(9,LOW);
+analogWrite(10,bright);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==1 && i3==0 && i4==0 && i5==1 && i6==0) //FOR I
+{analogWrite(3,LOW);
+analogWrite(5,bright);
+analogWrite(6,LOW);
+analogWrite(9,bright);
+analogWrite(10,LOW);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==1 && i3==0 && i4==0 && i5==1 && i6==1) //FOR J
+{analogWrite(3,LOW);
+analogWrite(5,bright);
+analogWrite(6,LOW);
+analogWrite(9,bright);
+analogWrite(10,bright);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==1 && i3==0 && i4==1 && i5==0 && i6==0) //FOR K
+{analogWrite(3,bright);
+analogWrite(5,LOW);
+analogWrite(6,bright);
+analogWrite(9,LOW);
+analogWrite(10,LOW);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==1 && i3==0 && i4==1 && i5==0 && i6==1) //FOR L
+{analogWrite(3,bright);
+analogWrite(5,bright);
+analogWrite(6,bright);
+analogWrite(9,LOW);
+analogWrite(10,LOW);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==1 && i3==0 && i4==1 && i5==1 && i6==0) //FOR M
+{analogWrite(3,bright);
+analogWrite(5,LOW);
+analogWrite(6,bright);
+analogWrite(9,bright);
+analogWrite(10,LOW);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==1 && i3==0 && i4==1 && i5==1 && i6==1) //FOR N
+{analogWrite(3,bright);
+analogWrite(5,LOW);
+analogWrite(6,bright);
+analogWrite(9,bright);
+analogWrite(10,bright);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==1 && i3==1 && i4==0 && i5==0 && i6==0) //FOR O
+{analogWrite(3,bright);
+analogWrite(5,LOW);
+analogWrite(6,bright);
+analogWrite(9,LOW);
+analogWrite(10,bright);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==1 && i3==1 && i4==0 && i5==0 && i6==1) //FOR P
+{analogWrite(3,bright);
+analogWrite(5,bright);
+analogWrite(6,bright);
+analogWrite(9,bright);
+analogWrite(10,LOW);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==1 && i3==1 && i4==0 && i5==1 && i6==0) //FOR Q
+{analogWrite(3,bright);
+analogWrite(5,bright);
+analogWrite(6,bright);
+analogWrite(9,bright);
+analogWrite(10,bright);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==1 && i3==1 && i4==0 && i5==1 && i6==1) //FOR R
+{analogWrite(3,bright);
+analogWrite(5,bright);
+analogWrite(6,bright);
+analogWrite(9,LOW);
+analogWrite(10,bright);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==1 && i3==1 && i4==1 && i5==0 && i6==0) //FOR S
+{analogWrite(3,LOW);
+analogWrite(5,bright);
+analogWrite(6,bright);
+analogWrite(9,bright);
+analogWrite(10,LOW);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==1 && i3==1 && i4==1 && i5==0 && i6==1) //FOR T
+{analogWrite(3,LOW);
+analogWrite(5,bright);
+analogWrite(6,bright);
+analogWrite(9,bright);
+analogWrite(10,bright);
+analogWrite(11,LOW);
+}
+else if(i1==0 && i2==1 && i3==1 && i4==1 && i5==1 && i6==0) //FOR U
+{analogWrite(3,bright);
+analogWrite(5,LOW);
+analogWrite(6,bright);
+analogWrite(9,LOW);
+analogWrite(10,LOW);
+analogWrite(11,bright);
+}
+else if(i1==0 && i2==1 && i3==1 && i4==1 && i5==1 && i6==1) //FOR V
+{analogWrite(3,bright);
+analogWrite(5,bright);
+analogWrite(6,bright);
+analogWrite(9,LOW);
+analogWrite(10,LOW);
+analogWrite(11,bright);
+}
+else if(i1==1 && i2==0 && i3==0 && i4==0 && i5==0 && i6==0) //FOR W
+{analogWrite(3,LOW);
+analogWrite(5,bright);
+analogWrite(6,LOW);
+analogWrite(9,bright);
+analogWrite(10,bright);
+analogWrite(11,bright);
+}
+else if(i1==1 && i2==0 && i3==0 && i4==0 && i5==0 && i6==1) //FOR X
+{analogWrite(3,bright);
+analogWrite(5,LOW);
+analogWrite(6,bright);
+analogWrite(9,bright);
+analogWrite(10,LOW);
+analogWrite(11,bright);
+}
+else if(i1==1 && i2==0 && i3==0 && i4==0 && i5==1 && i6==0) //FOR Y
+{analogWrite(3,bright);
+analogWrite(5,LOW);
+analogWrite(6,bright);
+analogWrite(9,bright);
+analogWrite(10,bright);
+analogWrite(11,bright);
+}
+else if(i1==1 && i2==0 && i3==0 && i4==0 && i5==1 && i6==1) //FOR Z
+{analogWrite(3,bright);
+analogWrite(5,LOW);
+analogWrite(6,bright);
+analogWrite(9,LOW);
+analogWrite(10,bright);
+analogWrite(11,bright);
+}
+
+else if(i1==1 && i2==1 && i3==1 && i4==1 && i5==1 && i6==1) //FOR space
+{analogWrite(3,LOW);
+analogWrite(5,LOW);
+analogWrite(6,LOW);
+analogWrite(9,LOW);
+analogWrite(10,LOW);
+analogWrite(11,LOW);
+
+}
+
+Serial.print("\ti=");
+Serial.print(i);
+Serial.print("\tOP=");
+Serial.print(i1);
+Serial.print(i2);
+Serial.print(i3);
+Serial.print(i4);
+Serial.print(i5);
+Serial.println(i6);
+
+delay(20000);}}
